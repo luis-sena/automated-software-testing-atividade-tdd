@@ -95,7 +95,7 @@ public class ValidatePalindromeTest {
     @DisplayName("Should Return True With 'Madam I’m Adam'")
     void shouldReturnTrueWithMadamImAdam() {
         //Arrange
-        String text = "Madam I’m Adam";
+        String text = "Madam I'm Adam";
 
         //Act
         boolean result = validatePalindrome.validate(text);

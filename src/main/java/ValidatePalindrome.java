@@ -1,15 +1,20 @@
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+
 public class ValidatePalindrome implements IValidatePalindrome {
 
     @Override
     public boolean validate(String text) {
-        String originalText = prepareString(text);
-        String reverseText = reverseString(originalText);
-        return originalText.equals(reverseText);
+        String preparedText = prepareString(text);
+        String reverseText = reverseString(preparedText);
+        return preparedText.equals(reverseText);
     }
 
     private String prepareString(String text){
-        return text.replaceAll("[^a-zA-Z0-9]", "")
-                .trim()
+        String nfdNormalizedString = Normalizer.normalize(text, Normalizer.Form.NFD);
+        Pattern pattern = Pattern.compile("[\\p{InCombiningDiacriticalMarks}\\p{Punct}\\p{Blank}]+");
+        return pattern.matcher(nfdNormalizedString)
+                .replaceAll("")
                 .toLowerCase();
     }
 
