@@ -1,3 +1,5 @@
+package br.com.lsena.palindrome;
+
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 
