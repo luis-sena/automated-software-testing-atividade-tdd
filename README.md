@@ -35,7 +35,7 @@ Aula 1 "ESD21 - Automated Software Testing" - Atividade TDD
 ## Como rodar os testes
 
 ```sh
-git clone https://gitlab.com/luis-sena/mba/automated-software-testing/atividade-tdd.git && cd atividade-tdd
+git clone https://github.com/luis-sena/automated-software-testing-atividade-tdd.git && cd atividade-tdd
 
 gradle clean test
 ```
